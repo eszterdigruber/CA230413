@@ -27,6 +27,29 @@ namespace HelloWorld
             Feladat2(); Console.WriteLine("\n--------------------------\n");
             Feladat3(); Console.WriteLine("\n--------------------------\n");
             Feladat4(); Console.WriteLine("\n--------------------------\n");
+            Feladat5(); Console.WriteLine("\n--------------------------\n");
+        }
+
+        private static void Feladat5()
+        {
+            Console.WriteLine("5.feladat: Csökkenő sorrend:");
+            //Rendezési tétel
+            List<int> Suly = new List<int>();
+            foreach (var c in Chi_List)
+            {
+                if (!Suly.Contains(c.Suly)) 
+                { Suly.Add(c.Suly); }
+            }
+            Suly.Sort(); //Növekvő sorrend
+            Suly.Reverse(); // Csökkenő sorrend
+            for (int i = 0; i < 5; i++)
+            {
+                foreach (var c in Chi_List)
+                {
+                    if (Suly[i] == c.Suly)
+                    { Console.WriteLine($"{c.Nev}: {c.Suly}"); }
+                }
+            }
         }
 
         private static void Feladat4()
