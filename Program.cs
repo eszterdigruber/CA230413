@@ -42,7 +42,7 @@ namespace HelloWorld
             }
             Suly.Sort(); //Növekvő sorrend
             Suly.Reverse(); // Csökkenő sorrend
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 4; i++)
             {
                 foreach (var c in Chi_List)
                 {
