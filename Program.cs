@@ -23,7 +23,18 @@ namespace HelloWorld
         static List<Chi> Chi_List = new List<Chi>();
         static void Main(string[] args)
         {
-            
+            Beolvasas();
+        }
+
+        private static void Beolvasas()
+        {
+            Console.WriteLine("Beolvasás");
+            var sr = new StreamReader(@"chi.txt", Encoding.UTF8);
+            while (!sr.EndOfStream)
+            {
+                Chi_List.Add(new Chi(sr.ReadLine()));
+            }
+            sr.Close();
         }
     }
 }
