@@ -5,7 +5,7 @@ namespace HelloWorld
     struct Chi
     {
         public string Nev;
-        public string Szul_Datum;
+        public DateTime Szul_Datum;
         public int Suly;
         public string Simi;
 
@@ -13,7 +13,7 @@ namespace HelloWorld
         {
             var dbok = sor.Split(";");
             this.Nev = dbok[0];
-            this.Szul_Datum = dbok[1];
+            this.Szul_Datum = DateTime.Parse(dbok[1]);
             this.Suly = int.Parse(dbok[2]);
             this.Simi = dbok[3];
         }
@@ -25,17 +25,43 @@ namespace HelloWorld
         {
             Beolvasas(); Console.WriteLine("\n--------------------------\n");
             Feladat2(); Console.WriteLine("\n--------------------------\n");
+            Feladat3(); Console.WriteLine("\n--------------------------\n");
+            Feladat4(); Console.WriteLine("\n--------------------------\n");
+        }
+
+        private static void Feladat4()
+        {
+            Console.WriteLine("4.feladat: 8 éves vagy idősebb...:");
+            DateTime Most = DateTime.Now;
+            DateTime Szuletes;
+            foreach (var c in Chi_List)
+            {
+                int Evek = c.
+            }
+        }
+
+        private static void Feladat3()
+        {
+            Console.WriteLine("3.feladat: Százalék számítás:");
+            int SimiSzeret = 0;
+            foreach (var c in Chi_List)
+            {
+                if (c.Simi == "I") 
+                { SimiSzeret++; }
+            }
+            double Arany = SimiSzeret * 100 / Chi_List.Count;
+            Console.WriteLine($"Ilyen arányban szeretik a simogatást: {Arany:0.00}%");
         }
 
         private static void Feladat2()
         {
-            Console.WriteLine("2.feladat: Összes Chinchilla");
+            Console.WriteLine("2.feladat: Összes Chinchilla:");
             Console.WriteLine($"{Chi_List.Count} Chinchilla adatait olvastuk be");
         }
 
         private static void Beolvasas()
         {
-            Console.WriteLine("Beolvasás");
+            Console.WriteLine("Beolvasás:");
             var sr = new StreamReader(@"chi.txt", Encoding.UTF8);
             while (!sr.EndOfStream)
             {
