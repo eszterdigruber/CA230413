@@ -23,7 +23,14 @@ namespace HelloWorld
         static List<Chi> Chi_List = new List<Chi>();
         static void Main(string[] args)
         {
-            Beolvasas();
+            Beolvasas(); Console.WriteLine("\n--------------------------\n");
+            Feladat2(); Console.WriteLine("\n--------------------------\n");
+        }
+
+        private static void Feladat2()
+        {
+            Console.WriteLine("2.feladat: Összes Chinchilla");
+            Console.WriteLine($"{Chi_List.Count} Chinchilla adatait olvastuk be");
         }
 
         private static void Beolvasas()
