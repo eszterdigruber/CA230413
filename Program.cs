@@ -36,7 +36,11 @@ namespace HelloWorld
             DateTime Szuletes;
             foreach (var c in Chi_List)
             {
-                int Evek = c.
+                double Napok = (Most - c.Szul_Datum).TotalDays;
+                int Evek = (int)Napok / 365;
+                //Console.WriteLine($"{c.Nev, -15} : {Evek}");
+                if (8 < Evek && c.Suly < 360)
+                { Console.WriteLine($"{c.Nev}: {Evek} éves és {c.Suly} gramm."); }
             }
         }
 
